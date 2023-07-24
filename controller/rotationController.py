@@ -35,6 +35,7 @@ class RotationRouter(APIRouter):
 
                 # route = calculate.createRotation(start_coordinate=start_coordinate, end_coordinate=end_coordinate)
             
+            
                 return {
                     "message": "success",
                     "data": "result",
