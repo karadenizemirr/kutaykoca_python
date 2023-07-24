@@ -26,19 +26,19 @@ class RotationRouter(APIRouter):
             try:
 
                 # Get All Location
-                locations = self.dbSession.query(Location).all()
-                # result = calculate.getClosestStops(locations=locations, user=bodyData)
-                result = calculate.find_closest_coordiate(bodyData, locations)
+                # locations = self.dbSession.query(Location).all()
+                # # result = calculate.getClosestStops(locations=locations, user=bodyData)
+                # result = calculate.find_closest_coordiate(bodyData, locations)
                 
-                start_coordinate = f"{bodyData.lat},{bodyData.lon}"
-                end_coordinate = f"{result['lat']},{result['lon']}"
+                # start_coordinate = f"{bodyData.lat},{bodyData.lon}"
+                # end_coordinate = f"{result['lat']},{result['lon']}"
 
-                route = calculate.createRotation(start_coordinate=start_coordinate, end_coordinate=end_coordinate)
+                # route = calculate.createRotation(start_coordinate=start_coordinate, end_coordinate=end_coordinate)
             
                 return {
                     "message": "success",
-                    "data": result,
-                    "route": route
+                    "data": "result",
+                    "route": "route"
                 }
 
                 
