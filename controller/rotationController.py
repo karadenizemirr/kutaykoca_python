@@ -25,6 +25,7 @@ class RotationRouter(APIRouter):
         def getCalcute(bodyData: CalculateItem):
             try:
 
+                # Get All Location
                 locations = self.dbSession.query(Location).all()
                 # result = calculate.getClosestStops(locations=locations, user=bodyData)
                 result = calculate.find_closest_coordiate(bodyData, locations)
@@ -34,11 +35,10 @@ class RotationRouter(APIRouter):
 
                 route = calculate.createRotation(start_coordinate=start_coordinate, end_coordinate=end_coordinate)
             
-
                 return {
                     "message": "success",
-                    "data": "result",
-                    "route": "route"
+                    "data": result,
+                    "route": route
                 }
 
                 
